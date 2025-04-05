@@ -1,8 +1,10 @@
-let submit = document.querySelector(".submit");
-let error = document.querySelector(".error");
-let invlid = document.querySelector(".invalid");
-
-const showtoast = (msg)=>{
-    let toast = document.createElement('div');
-    
+const submitBtn = document.querySelector('#submit');
+const toastElement = document.querySelector('#submitToast');
+function toast() {
+    toastElement.className = 'show';
+    setTimeout(function(){toastElement.className = toastElement.className.replace('show', '');}, 3000);
 }
+
+submitBtn.addEventListener('click' , function(){
+    toast();
+})
